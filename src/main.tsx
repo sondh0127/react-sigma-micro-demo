@@ -2,19 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-import { registerMicroApps, start } from 'qiankun';
+import { registerInteractiveApp } from '@interactive/micro';
 import 'uno.css'
 
-registerMicroApps([
+registerInteractiveApp([
   {
-    name: '@interactive/app',
     entry: 'https://dev-livestream.gviet.vn/interactive/app/',
-    container: '#sub-app',
     activeRule: '/interactive/app',
+    $sdk: {}
   },
 ]);
 
-start();
 
 ReactDOM.render(
   <React.StrictMode>

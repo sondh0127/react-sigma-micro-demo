@@ -42,7 +42,7 @@ function Main() {
               <App />
             </Route>
           </Switch>
-          <div className="h-full" id="sub-app"></div>
+          <div className="h-full" id="interactive-app"></div>
         </div>
       </Router>
     </>
