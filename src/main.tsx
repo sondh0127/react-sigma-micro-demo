@@ -9,7 +9,9 @@ registerInteractiveApp([
   {
     entry: 'https://dev-livestream.gviet.vn/interactive/app/',
     activeRule: '/interactive/app',
-    $sdk: {}
+    $sdk: {
+      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiIyOWY2NWUwMC0xZWU1LTQwZjAtYWZhNS0zM2MyODE5ODI4ODMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM3NDcyODkyfQ.HQoeTm1khKSurFhgyWnnrRSvoMS0IJ-IVsBln5nCD4A'
+    }
   },
 ]);
 
