@@ -25,6 +25,9 @@ function Main() {
             <li>
               <Link to="/topics">Topics</Link>
             </li>
+            <li>
+              <Link to="/interactive/app">Interactive App</Link>
+            </li>
           </ul>
           <Switch>
             <Route exact={true} path="/interactive/app">
