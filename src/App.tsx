@@ -13,8 +13,8 @@ import {
 function Main() {
   return (
     <>
-      <Router>
-        <div>
+      <Router >
+        <div className="h-full">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -27,7 +27,8 @@ function Main() {
             </li>
           </ul>
           <Switch>
-            <Route exact={true} path="/interactive/app" />
+            <Route exact={true} path="/interactive/app">
+            </Route>
             <Route path="/about">
               <div>About</div>
             </Route>
@@ -38,6 +39,7 @@ function Main() {
               <App />
             </Route>
           </Switch>
+          <div className="h-full" id="sub-app"></div>
         </div>
       </Router>
     </>

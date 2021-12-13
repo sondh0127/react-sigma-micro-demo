@@ -7,7 +7,7 @@ import { registerMicroApps, start } from 'qiankun';
 registerMicroApps([
   {
     name: '@interactive/app',
-    entry: 'http://localhost:5000/interactive/app/',
+    entry: 'https://dev-livestream.gviet.vn/interactive/app/',
     container: '#sub-app',
     // loader: (loading) => render({ loading }),
     activeRule: '/interactive/app',
