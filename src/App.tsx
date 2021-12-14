@@ -8,9 +8,20 @@ import {
   // BrowserRouter as Router,
   HashRouter as Router
 } from "react-router-dom";
+import { actions } from "./interactive-app";
 
 
 function Main() {
+  function changeToken() {
+    actions.updateGlobalState((state) => {
+      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiIyOWY2NWUwMC0xZWU1LTQwZjAtYWZhNS0zM2MyODE5ODI4ODMiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjM3NDcyODkyfQ.HQoeTm1khKSurFhgyWnnrRSvoMS0IJ-IVsBln5nCD4A'
+      return {
+        ...state,
+        token,
+      }
+    })
+  }
+
   return (
     <>
       <Router >
@@ -28,9 +39,10 @@ function Main() {
             <li>
               <Link to="/editor/interactive-app">Interactive App</Link>
             </li>
+            <button onClick={changeToken}> Change Token </button>
           </ul>
           <Switch>
-            <Route exact={true} path="/editor/interactive-app">
+            <Route path="/editor/interactive-app">
             </Route>
             <Route path="/about">
               <div>About</div>
