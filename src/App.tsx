@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  useLocation
+  // BrowserRouter as Router,
+  HashRouter as Router
 } from "react-router-dom";
 
 
@@ -26,11 +26,11 @@ function Main() {
               <Link to="/topics">Topics</Link>
             </li>
             <li>
-              <Link to="/interactive/app">Interactive App</Link>
+              <Link to="/editor/interactive-app">Interactive App</Link>
             </li>
           </ul>
           <Switch>
-            <Route exact={true} path="/interactive/app">
+            <Route exact={true} path="/editor/interactive-app">
             </Route>
             <Route path="/about">
               <div>About</div>
