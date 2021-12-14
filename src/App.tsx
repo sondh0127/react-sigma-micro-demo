@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import logo from './logo.svg'
-import './App.css'
 import {
   Switch,
   Route,
@@ -26,35 +25,48 @@ function Main() {
     <>
       <Router >
         <div className="h-full">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/topics">Topics</Link>
-            </li>
-            <li>
-              <Link to="/editor/interactive-app">Interactive App</Link>
-            </li>
-            <button onClick={changeToken}> Change Token </button>
-          </ul>
-          <Switch>
-            <Route path="/editor/interactive-app">
-            </Route>
-            <Route path="/about">
-              <div>About</div>
-            </Route>
-            <Route path="/topics">
-              <div>Topics</div>
-            </Route>
-            <Route path="/">
-              <App />
-            </Route>
-          </Switch>
-          <div className="h-full" id="interactive-app"></div>
+          <div className="fixed w-[220px] bg-[#ebf1f5] h-[100vh]">
+            Sidebar
+          </div>
+
+          <div className="pl-[240px] pr-[20px]">
+            <div className="h-[45px] bg-blue-200 fixed w-[calc(100%-220px)] ml-[-20px]">
+              <div className='flex'>
+                <div>
+                  <Link to="/">Home</Link>
+                </div>
+                <div>
+                  <Link to="/about">About</Link>
+                </div>
+                <div>
+                  <Link to="/topics">Topics</Link>
+                </div>
+                <div>
+                  <Link to="/editor/interactive-app">Interactive App</Link>
+                </div>
+                <button onClick={changeToken}> Change Token </button>
+              </div>
+            </div>
+            <div className="pt-[60px] min-h-[calc(100vh-101px)] bg-red-200 py-[15px] border-box">
+              <div className="relative my-[-15px] min-h-[calc(100vh-45px)] mx-[-20px]">
+                <div className="absolute inset-0" id="interactive-app"></div>
+                <Switch>
+                <Route path="/editor/interactive-app">
+                </Route>
+                <Route path="/about">
+                  <div>About</div>
+                </Route>
+                <Route path="/topics">
+                  <div>Topics</div>
+                </Route>
+                <Route path="/">
+                  <App />
+                </Route>
+                </Switch>
+              </div>
+            </div>
+
+          </div>
         </div>
       </Router>
     </>
