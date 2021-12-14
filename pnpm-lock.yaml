@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@sigma-interactive/micro': ^0.1.8
+  '@sigma-interactive/micro': ^0.2.0
   '@types/react': ^17.0.33
   '@types/react-dom': ^17.0.10
   '@types/react-router-dom': ^5.3.2
@@ -21,7 +21,7 @@ dependencies:
   react-router-dom: 5.3.0_react@17.0.2
 
 devDependencies:
-  '@sigma-interactive/micro': 0.1.8
+  '@sigma-interactive/micro': 0.2.0
   '@types/react': 17.0.37
   '@types/react-dom': 17.0.11
   '@types/react-router-dom': 5.3.2
@@ -366,8 +366,8 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sigma-interactive/micro/0.1.8:
-    resolution: {integrity: sha512-B4u0G1c79jV2llT6QK0Xtk18wpZ4hhDmTV0TX9qSmTWGq9395FIt5qnjToohO/Dg2XYCzdqKM3b2JbucGhWq5g==}
+  /@sigma-interactive/micro/0.2.0:
+    resolution: {integrity: sha512-nBtVS3jxeTSk2T5JFrBNY98VwP7Ov+0fHc7pI/wSvVRh85pOi0W6dSZ6i4Dwg2TLlmwLjFAV3E1F38K86u5evw==}
     dependencies:
       qiankun: 2.6.3
     dev: true
