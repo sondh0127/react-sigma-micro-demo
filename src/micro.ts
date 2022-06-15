@@ -82,5 +82,7 @@ export function registerSigmaApp(config: SigmaAppConfig,
 
   runAfterFirstMounted(() => { })
 
-  start({ prefetch: true, sandbox: true })
+  start({
+    prefetch: true, sandbox: true,
+  })
 }
