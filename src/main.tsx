@@ -1,15 +1,17 @@
+import '@unocss/reset/tailwind.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import 'uno.css'
 import App from './App'
-import { registerInteractiveApp } from '@sigma-interactive/micro';
+import { registerSigmaApp } from './micro';
 
-registerInteractiveApp(
+registerSigmaApp(
   [
     {
-      entry: 'http://localhost:3333/',
-      activeRule: '#/editor/interactive-app',
+      name:  `@sigma-streaming/ssai`,
+      entry: import.meta.env.DEV ? 'http://localhost:4100': 'http://123.31.18.25:2181/micro/cms/ssai/',
+      activeRule: '#/sigma/ssai',
     },
   ],
 );

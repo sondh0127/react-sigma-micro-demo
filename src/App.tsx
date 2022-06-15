@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-import logo from './logo.svg'
 import {
   Switch,
   Route,
   Link,
-  // BrowserRouter as Router,
   HashRouter as Router
 } from "react-router-dom";
 import { actions } from "./interactive-app";
@@ -24,44 +22,46 @@ function Main() {
   return (
     <>
       <Router >
-        <div className="h-full">
-          <div className="fixed w-[220px] bg-[#ebf1f5] h-[100vh]">
+        <div className="h-full text-white">
+          <div className="fixed w-[220px] bg-violet h-[100vh]">
             Sidebar
           </div>
 
           <div className="pl-[240px] pr-[20px]">
-            <div className="h-[45px] bg-blue-200 fixed w-[calc(100%-220px)] ml-[-20px]">
-              <div className='flex'>
-                <div>
+            <div className="h-[45px] bg-blue fixed w-[calc(100%-220px)] ml-[-20px]">
+              <div className='flex gap-2 items-center justify-center'>
+                <div className="p-2 bg-neutral rounded">
                   <Link to="/">Home</Link>
                 </div>
-                <div>
+                <div className="p-2 bg-neutral rounded">
                   <Link to="/about">About</Link>
                 </div>
-                <div>
+                <div className="p-2 bg-neutral rounded">
                   <Link to="/topics">Topics</Link>
                 </div>
-                <div>
-                  <Link to="/editor/interactive-app">Interactive App</Link>
+                <div className="p-2 bg-neutral rounded">
+                  <Link to="/sigma/ssai">SSAI</Link>
                 </div>
-                <button onClick={changeToken}> Change Token </button>
+                {/* <button onClick={changeToken}> Change Token </button> */}
               </div>
             </div>
-            <div className="pt-[60px] min-h-[calc(100vh-101px)] bg-red-200 py-[15px] border-box">
+            <div className="pt-[60px] min-h-[calc(100vh-101px)] bg-gray py-[15px] border-box">
               <div className="relative my-[-15px] min-h-[calc(100vh-45px)] mx-[-20px]">
-                <div className="absolute inset-0" id="interactive-app"></div>
+                <div className="absolute inset-0" id="sigma-app"></div>
                 <Switch>
-                <Route path="/editor/interactive-app">
-                </Route>
-                <Route path="/about">
-                  <div>About</div>
-                </Route>
-                <Route path="/topics">
-                  <div>Topics</div>
-                </Route>
-                <Route path="/">
-                  <App />
-                </Route>
+                  <Route path="/editor/interactive-app">
+                  </Route>
+                  <Route path="/about">
+                    <div>About</div>
+                  </Route>
+                  <Route path="/topics">
+                    <div>Topics</div>
+                  </Route>
+                  <Route path="/">
+                    <div className="">
+                      Home
+                    </div>
+                  </Route>
                 </Switch>
               </div>
             </div>
@@ -73,44 +73,5 @@ function Main() {
   )
 }
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
-}
 
 export default Main
