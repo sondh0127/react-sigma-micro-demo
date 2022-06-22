@@ -14,11 +14,11 @@ registerSigmaApp(
       entry: isDev ? 'http://localhost:4100': 'http://123.31.18.25:2181/micro/cms/ssai/',
       activeRule: '#/sigma/ssai',
     },
-    {
-      name:  `@sigma-streaming/lrm`,
-      entry: isDev ? 'http://localhost:4200': 'http://123.31.18.25:2181/micro/cms/lrm/',
-      activeRule: '#/sigma/lrm',
-    },
+    // {
+    //   name:  `@sigma-streaming/lrm`,
+    //   entry: isDev ? 'http://localhost:4200': 'http://123.31.18.25:2181/micro/cms/lrm/',
+    //   activeRule: '#/sigma/lrm',
+    // },
   ],
 );
 

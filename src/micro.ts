@@ -1,9 +1,23 @@
 import { initGlobalState, registerMicroApps, runAfterFirstMounted, start } from 'qiankun'
+import { proxy, useSnapshot } from 'valtio'
+
+interface MenuItem {
+  name: string
+  meta: Record<string, any>
+  path: string
+  children: MenuItem[] | undefined
+}
+
+interface ChildApp {
+  name: string,
+  routes: MenuItem[]
+}
 
 export interface GlobalState {
   tokenProp?: 'x-access-token' | 'x-backdoor'
   token: string
   livestreamId: string
+  children: ChildApp[]
   [key: string]: any
 }
 
@@ -17,30 +31,28 @@ export type SigmaAppConfig = AppConfig[]
 
 export type OnGlobalStateChangeCallback = (newState: GlobalState, prevState: GlobalState) => void
 
-export function initSigmaState(globalState: GlobalState) {
-  const $state: { value: GlobalState } = {
-    value: { tokenProp: 'x-backdoor', ...globalState },
-  }
+// export const $state = proxy({
+//   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiJkZWZhdWx0LWFwcCIsImlhdCI6MTYzOTQ2ODA2MX0.UUgc5WhOCO8-rk6ujzqxSAItoTJKg41OTD7JHMyWU9c',
+//   livestreamId: 'c9c2ebfb-2887-4de6-aec4-0a30aa848915',
+//   tokenProp: 'x-backdoor',
+//   hello: 'world2',
+//   children: [] // as ChildApp[]
+// })
 
-  const actions = initGlobalState($state.value)
-  actions.onGlobalStateChange(newValue => $state.value = newValue as GlobalState)
 
-  return {
-    onGlobalStateChange: (
-      callback: OnGlobalStateChangeCallback,
-      fireImmediately?: boolean
-    ) => {
-      actions.onGlobalStateChange((newValue, prevValue) => {
-        callback(newValue as GlobalState, prevValue as GlobalState)
-      }, fireImmediately)
-    },
-    offGlobalStateChange: actions.offGlobalStateChange,
-    setGlobalState: (state: GlobalState) => actions.setGlobalState(state),
-    updateGlobalState: (cb: (_state: GlobalState) => GlobalState) => {
-      actions.setGlobalState(cb($state.value))
-    },
-  }
-}
+
+export const actions = initGlobalState({
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiJkZWZhdWx0LWFwcCIsImlhdCI6MTYzOTQ2ODA2MX0.UUgc5WhOCO8-rk6ujzqxSAItoTJKg41OTD7JHMyWU9c',
+  livestreamId: 'c9c2ebfb-2887-4de6-aec4-0a30aa848915',
+  tokenProp: 'x-backdoor',
+  hello: 'world2',
+  children: [] // as ChildApp[]
+})
+
+actions.onGlobalStateChange((newState) => {
+  console.log('[LOG] ~ file: micro.ts ~ line 28 ~ newState', newState)
+}, true)
+
 
 export function registerSigmaApp(config: SigmaAppConfig,
 ) {
