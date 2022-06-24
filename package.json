@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@antfu/utils": "^0.5.2",
     "@unocss/reset": "^0.39.3",
     "qiankun": "^2.7.3",
     "react": "^17.0.2",

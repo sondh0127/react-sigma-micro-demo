@@ -5,17 +5,16 @@ import {
   Link,
   HashRouter as Router
 } from "react-router-dom";
-
+import Sidebar from './Sidebar';
 
 function Main() {
-
 
   return (
     <>
       <Router >
         <div className="h-full text-white">
           <div className="fixed w-[220px] bg-violet h-[100vh]">
-            Sidebar
+            <Sidebar />
           </div>
 
           <div className="pl-[240px] pr-[20px]">
