@@ -35,6 +35,9 @@ function Main() {
                 <div className="p-2 bg-neutral rounded">
                   <Link to="/sigma/lrm">LRM</Link>
                 </div>
+                <div className="p-2 bg-neutral rounded">
+                  <Link to="/sigma/interactive"> Interactive </Link>
+                </div>
                 {/* <button onClick={changeToken}> Change Token </button> */}
               </div>
             </div>
@@ -42,6 +45,7 @@ function Main() {
               <div className="relative my-[-15px] min-h-[calc(100vh-45px)] mx-[-20px]">
                 <div className="absolute inset-0" id="sigma-app"></div>
                 <Switch>
+                  <Route path="/sigma/interactive"></Route>
                   <Route path="/sigma/ssai"></Route>
                   <Route path="/sigma/lrm"></Route>
                   <Route path="/about">

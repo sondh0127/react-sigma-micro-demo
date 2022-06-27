@@ -110,9 +110,16 @@ export function registerSigmaApp(config: SigmaAppConfig) {
   async function getMenu() {
     const menus = await p(apps)
       .map(async app => {
+        let routes = []
+
+        try {
+          routes = await getRoutes(`${ensureSuffix('/', app.entry)}routes.json`)
+        } catch (e) {
+
+        }
         return {
           ...app,
-          routes: await getRoutes(`${ensureSuffix('/', app.entry)}routes.json`)
+          routes
         }
       })
 
