@@ -1,7 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { useSnapshot } from 'valtio';
-import { microApps } from './main';
-import { microState } from './micro';
+import { microApps, globalState } from './main';
 
 export function getMicroPath(path: string, name: string) {
   const app = microApps.find(item => item.name === name)
@@ -16,7 +15,7 @@ interface SidebarProps {
 }
 
 const Sidebar = (props: SidebarProps) => {
-  const snap = useSnapshot(microState)
+  const snap = useSnapshot(globalState)
   const history = useHistory();
 
   function selectRoute(path: string, name: string) {
