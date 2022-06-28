@@ -1,10 +1,6 @@
-import { useEffect, useState } from 'react'
-import {
-  Switch,
-  Route,
-  Link,
-  HashRouter as Router
-} from "react-router-dom";
+import { Switch, Route, HashRouter as Router } from "react-router-dom";
+import { CONTAINER_ID } from "./main";
+import NavBar from './NavBar';
 import Sidebar from './Sidebar';
 
 function Main() {
@@ -19,31 +15,12 @@ function Main() {
 
           <div className="pl-[240px] pr-[20px]">
             <div className="h-[45px] bg-blue fixed w-[calc(100%-220px)] ml-[-20px]">
-              <div className='flex gap-2 items-center justify-center'>
-                <div className="p-2 bg-neutral rounded">
-                  <Link to="/">Home</Link>
-                </div>
-                <div className="p-2 bg-neutral rounded">
-                  <Link to="/about">About</Link>
-                </div>
-                <div className="p-2 bg-neutral rounded">
-                  <Link to="/topics">Topics</Link>
-                </div>
-                <div className="p-2 bg-neutral rounded">
-                  <Link to="/sigma/ssai">SSAI</Link>
-                </div>
-                <div className="p-2 bg-neutral rounded">
-                  <Link to="/sigma/lrm">LRM</Link>
-                </div>
-                <div className="p-2 bg-neutral rounded">
-                  <Link to="/sigma/interactive"> Interactive </Link>
-                </div>
-                {/* <button onClick={changeToken}> Change Token </button> */}
-              </div>
+              <NavBar />
             </div>
             <div className="pt-[60px] min-h-[calc(100vh-101px)] bg-gray py-[15px] border-box">
               <div className="relative my-[-15px] min-h-[calc(100vh-45px)] mx-[-20px]">
-                <div className="absolute inset-0" id="sigma-app"></div>
+                {/* Use one container for all app */}
+                <div className="absolute inset-0" id={CONTAINER_ID}></div>
                 <Switch>
                   <Route path="/sigma/interactive"></Route>
                   <Route path="/sigma/ssai"></Route>
