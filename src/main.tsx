@@ -6,7 +6,7 @@ import 'uno.css'
 import App from './App'
 import { AppConfig, registerSigmaApps, MicroApp } from '@sigma-streaming/micro';
 
-const isDev = true
+const isDev = false
 export const CONTAINER_ID = 'sigma-app'
 
 export const microApps: MicroApp[] = [
@@ -18,7 +18,7 @@ export const microApps: MicroApp[] = [
   },
   {
     name: `@sigma-streaming/lrm`,
-    entry: isDev ? 'http://localhost:4200' : 'https://dev-livestream.gviet.vn/micro/cms/lrm/',
+    entry: isDev ? 'http://localhost:5050/micro/cms/lrm/' : 'https://dev-livestream.gviet.vn/micro/cms/lrm/',
     activeRule: '#/sigma/lrm',
     container: `#${CONTAINER_ID}`,
   },
@@ -32,7 +32,6 @@ export const microApps: MicroApp[] = [
 const appConfig: AppConfig = {
   token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiJkZWZhdWx0LWFwcCIsImlhdCI6MTYzOTQ2ODA2MX0.UUgc5WhOCO8-rk6ujzqxSAItoTJKg41OTD7JHMyWU9c',
   tokenType: 'x-backdoor',
-  channelId: 'c9c2ebfb-2887-4de6-aec4-0a30aa848915',
 }
 
 export const actions = registerSigmaApps(microApps, appConfig);

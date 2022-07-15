@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/utils': ^0.5.2
-  '@sigma-streaming/micro': ^0.1.5
+  '@sigma-streaming/micro': ^0.1.7
   '@types/react': ^17.0.47
   '@types/react-dom': ^17.0.17
   '@types/react-router-dom': ^5.3.3
@@ -19,7 +19,7 @@ specifiers:
 
 dependencies:
   '@antfu/utils': 0.5.2
-  '@sigma-streaming/micro': 0.1.5
+  '@sigma-streaming/micro': 0.1.7
   '@unocss/reset': 0.41.1
   qiankun: 2.7.3
   react: 17.0.2
@@ -53,8 +53,8 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /@antfu/ni/0.16.3:
-    resolution: {integrity: sha512-/C1N/hORSJp1qJHr4oRqQzmWPqB6S42T4HV4dWhXOllPJkcqQA/L40U55Oc7Gq4Gm9pLeCNZn7YYU1kUK2Ekpg==}
+  /@antfu/ni/0.17.2:
+    resolution: {integrity: sha512-uYsmcsQzylpMiRB4gJRwcEJMIrKyeHZO0CJct8MmqkT3B7HTFU6oSZhDB50E/XvQw7FW8oT/tKsq3NFplRgG2Q==}
     hasBin: true
     dev: false
 
@@ -409,11 +409,11 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sigma-streaming/micro/0.1.5:
-    resolution: {integrity: sha512-crWcfGUfIZRRrERMs1yHHFBppV1YV8ba7BQhSem1gjNzeiFqOGIE59MSY4fiWWlRiCgLQb6EQvchuG31aaBk3w==}
+  /@sigma-streaming/micro/0.1.7:
+    resolution: {integrity: sha512-7tEj91f3atL1PDdyOtTtElfz4uoClHBcn8ksIQpQ9CtywaHHbOoiu7jSk86pk6bwLg5bU5CtC+c4NvoQKrs1aw==}
     dependencies:
-      '@antfu/ni': 0.16.3
-      qiankun: 2.7.3
+      '@antfu/ni': 0.17.2
+      qiankun: 2.7.4
     dev: false
 
   /@types/history/4.7.11:
@@ -1361,6 +1361,16 @@ packages:
 
   /qiankun/2.7.3:
     resolution: {integrity: sha512-o0hEXgpMxkmlADiiEfQBMFo1cp84LfsEP6xhMT5R7QbGa3uGFR/T8EtyeOlvmhzjAaGExP6+r1bxiF8w4JV71A==}
+    dependencies:
+      '@babel/runtime': 7.18.3
+      import-html-entry: 1.12.0
+      lodash: 4.17.21
+      single-spa: 5.9.4
+      tslib: 1.14.1
+    dev: false
+
+  /qiankun/2.7.4:
+    resolution: {integrity: sha512-aihz6ue94CdalEBHBpJGD2UjY30Er0FEy8KxQuxCuEffOFvCXrvBsUm5UkfW32pu4AmAD/yB+lxad0Vzt6l5KQ==}
     dependencies:
       '@babel/runtime': 7.18.3
       import-html-entry: 1.12.0
