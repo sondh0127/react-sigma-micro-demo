@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/utils': ^0.5.2
-  '@sigma-streaming/micro': ^0.1.7
+  '@sigma-streaming/micro': ^0.2.0
   '@types/react': ^17.0.47
   '@types/react-dom': ^17.0.17
   '@types/react-router-dom': ^5.3.3
@@ -19,7 +19,7 @@ specifiers:
 
 dependencies:
   '@antfu/utils': 0.5.2
-  '@sigma-streaming/micro': 0.1.7
+  '@sigma-streaming/micro': 0.2.0
   '@unocss/reset': 0.41.1
   qiankun: 2.7.3
   react: 17.0.2
@@ -409,8 +409,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sigma-streaming/micro/0.1.7:
-    resolution: {integrity: sha512-7tEj91f3atL1PDdyOtTtElfz4uoClHBcn8ksIQpQ9CtywaHHbOoiu7jSk86pk6bwLg5bU5CtC+c4NvoQKrs1aw==}
+  /@sigma-streaming/micro/0.2.0:
+    resolution: {integrity: sha512-GRfp6eQAYoDJjWOxWSq+QywH1hxpEYKfWwismNNDXAPLC9t3BLBtVHpEOPRdYbVYKJg6lMrKFavL1kKTn3ENTA==}
     dependencies:
       '@antfu/ni': 0.17.2
       qiankun: 2.7.4
