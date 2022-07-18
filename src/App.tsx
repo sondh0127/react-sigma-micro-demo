@@ -23,8 +23,10 @@ function Main() {
                 <div className="absolute inset-0" id={CONTAINER_ID}></div>
                 <Switch>
                   <Route path="/sigma/interactive"></Route>
-                  <Route path="/sigma/ssai"></Route>
+                  {/* <Route path="/sigma/ssai"></Route> */}
                   <Route path="/sigma/lrm"></Route>
+                  <Route path="/sigma/transcode"></Route>
+                  <Route path="/sigma/library"></Route>
                   <Route path="/about">
                     <div>About</div>
                   </Route>

@@ -19,6 +19,12 @@ const NavBar = (props: NavBarProps) => {
       <Link to="/sigma/ssai">SSAI</Link>
     </div>
     <div className="p-2 bg-neutral rounded">
+      <Link to="/sigma/transcode">Transcode</Link>
+    </div>
+    <div className="p-2 bg-neutral rounded">
+      <Link to="/sigma/library">Library</Link>
+    </div>
+    <div className="p-2 bg-neutral rounded">
       <Link to="/sigma/lrm">LRM</Link>
     </div>
     <div className="p-2 bg-neutral rounded">
