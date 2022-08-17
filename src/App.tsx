@@ -2,6 +2,7 @@ import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import { CONTAINER_ID } from "./main";
 import NavBar from './NavBar';
 import Sidebar from './Sidebar';
+import { Button } from 'antd'
 
 function Main() {
 
@@ -11,6 +12,7 @@ function Main() {
         <div className="h-full text-white">
           <div className="fixed w-[220px] bg-violet h-[100vh]">
             <Sidebar />
+            <Button type="primary">Button</Button>
           </div>
 
           <div className="pl-[240px] pr-[20px]">

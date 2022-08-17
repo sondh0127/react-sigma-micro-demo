@@ -6,7 +6,7 @@ import 'uno.css'
 import App from './App'
 import { AppConfig, registerSigmaApps, MicroApp } from '@sigma-streaming/micro';
 
-const isDev = false
+const isDev = true
 export const CONTAINER_ID = 'sigma-app'
 
 export const microApps: MicroApp[] = [
