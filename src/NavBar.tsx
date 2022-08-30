@@ -4,8 +4,21 @@ interface NavBarProps {
 
 }
 
+const subMap = {
+  library: [
+
+  ]
+}
+
 const NavBar = (props: NavBarProps) => {
   return <div className='flex gap-2 items-center justify-center'>
+    <div className="sub-menu">
+        {subMap.library.map((item) => (
+          <Link to={`/lrm-sub/${item}`} key={item}>
+            {item}
+          </Link>
+        ))}
+      </div>
     <div className="p-2 bg-neutral rounded">
       <Link to="/">Home</Link>
     </div>

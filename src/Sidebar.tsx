@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { actions } from './main';
-import { GlobalState, getMicroPath } from '@sigma-streaming/micro'
+import { GlobalState } from '@sigma-streaming/micro'
+import { Menu, MenuProps } from "antd";
 
 
 interface SidebarProps {
@@ -10,61 +11,60 @@ interface SidebarProps {
 const Sidebar = (props: SidebarProps) => {
   const history = useHistory();
   const [state, setState] = useState<GlobalState>()
+  console.log('[LOG] ~ file: Sidebar.tsx ~ line 14 ~ state', state)
 
   useEffect(() => {
-    actions.onGlobalStateChange((newState) => {
+    const cleanUp = actions.onStateChange((newState) => {
       setState(newState)
-    }, true)
+    })
+    return () => { cleanUp() }
   }, [])
 
-  function selectRoute(path: string, name: string) {
-    const routePath = getMicroPath(path, name)
-    if (routePath) history.replace(routePath)
+  type MenuItem = Required<MenuProps>['items'][number];
+
+  function getItem(
+    label: React.ReactNode,
+    key: React.Key,
+    icon?: React.ReactNode,
+    children?: MenuItem[],
+    type?: 'group',
+  ): MenuItem {
+    return {
+      key,
+      icon,
+      children,
+      label,
+      type,
+    } as MenuItem;
   }
 
+  const memoItems = useMemo(() => {
+    const items: MenuProps['items'] = (state?.children || []).map(item =>
+      getItem(item.name, item.name, <div className="i-ant-design:mail-filled" />,
+        item.routes.map(route => getItem(route.meta.title, route.path, <div className={route.meta.icon} />))
+      ),
+    )
+    return items
+  }, [state])
+
+
+
+  const onClick: MenuProps['onClick'] = e => {
+    const path = `/${e.keyPath[1]}-sub${e.keyPath[0]}`
+    if (e.keyPath) history.push(path)
+  };
+
   return (
-    <div>
-      <div className="font-bold flex justify-center">Navigation</div>
-      <div>
-        {state?.children.map(app => {
-          return (
-            <div key={app.name}>
-              <div>
-                {app.name}
-                {
-                  app.routes.map(route => {
-                    if (route.children) {
-                      return (
-                        <div key={route.name} >
-                          <div className="flex items-center h-30px w-full bg-green px-12px">{route.meta.title}</div>
-                          <div className="pl-12px">
-                            {
-                              route.children.map(c => {
-                                return (
-                                  <button onClick={() => selectRoute(c.path, app.name)} className="flex items-center h-30px w-full bg-green px-12px" key={c.name}>
-                                    {c.meta.title}
-                                  </button>
-                                )
-                              })
-                            }
-                          </div>
-                        </div>
-                      )
-                    }
-
-                    return (
-                      <button key={route.name} onClick={() => selectRoute(route.path, app.name)} className="flex items-center h-30px w-full bg-green px-12px">
-                        {route.meta.title}
-                      </button>
-                    )
-                  })
-                }
-              </div>
-
-            </div>
-          )
-        })}
-      </div>
+    <div className="h-full py-5 flex flex-col">
+      <div className="font-bold text-xl flex justify-center">Sigma Streaming</div>
+      <Menu
+        className="flex-1"
+        onClick={onClick}
+        style={{ width: 220 }}
+        mode="inline"
+        defaultActiveFirst
+        items={memoItems}
+      />
     </div>
   )
 }

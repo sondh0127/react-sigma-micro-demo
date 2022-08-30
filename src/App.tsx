@@ -1,50 +1,59 @@
 import { Switch, Route, HashRouter as Router } from "react-router-dom";
-import { CONTAINER_ID } from "./main";
 import NavBar from './NavBar';
-import Sidebar from './Sidebar';
 import { Button } from 'antd'
+import Sidebar from './Sidebar';
+import Vite from "./Vite";
+import { actions } from "./main";
 
 function Main() {
+
+  function onChange() {
+    actions.setState({
+      token: 'newToken'
+    })
+  }
 
   return (
     <>
       <Router >
-        <div className="h-full text-white">
-          <div className="fixed w-[220px] bg-violet h-[100vh]">
+        <div
+          style={{
+            width: '100vw',
+          }}
+          className="flex"
+        >
+          <div className="h-[100vh] h-screen flex-shrink-0">
             <Sidebar />
-            <Button type="primary">Button</Button>
+            <Button type="primary" onClick={onChange}>Change State Demo</Button>
           </div>
-
-          <div className="pl-[240px] pr-[20px]">
-            <div className="h-[45px] bg-blue fixed w-[calc(100%-220px)] ml-[-20px]">
+          <div style={{
+            border: '1px dashed #ccc',
+            borderRadius: ' 8px',
+            display: 'inline-block',
+            height: '45%',
+            margin: '20px',
+            overflow: 'scroll',
+            width: '100%',
+          }}>
+            {/* <div className="h-[45px] bg-blue fixed w-[calc(100%-220px)] ml-[-20px]">
               <NavBar />
-            </div>
-            <div className="pt-[60px] min-h-[calc(100vh-101px)] bg-gray py-[15px] border-box">
-              <div className="relative my-[-15px] min-h-[calc(100vh-45px)] mx-[-20px]">
-                {/* Use one container for all app */}
-                <div className="absolute inset-0" id={CONTAINER_ID}></div>
-                <Switch>
-                  <Route path="/sigma/interactive"></Route>
-                  {/* <Route path="/sigma/ssai"></Route> */}
-                  <Route path="/sigma/lrm"></Route>
-                  <Route path="/sigma/transcode"></Route>
-                  <Route path="/sigma/library"></Route>
-                  <Route path="/about">
-                    <div>About</div>
-                  </Route>
-                  <Route path="/topics">
-                    <div>Topics</div>
-                  </Route>
-                  <Route path="/">
-                    <div className="">
-                      Home
-                    </div>
-                  </Route>
-                </Switch>
-              </div>
-            </div>
-
+            </div> */}
+            {/* <div style={{ height: 45 }}></div> */}
+            <Switch>
+              <Route exact path="/library"> <Vite url="//localhost:4300/" name="library" /> </Route>
+              <Route exact path="/library-sub/:path"> <Vite url="//localhost:4300/" name="library" /> </Route>
+              {/* <Route exact path="/vite-sub/:path"> <Vite /> </Route> */}
+              {/* <Route path="/sigma/lrm"></Route> */}
+              {/* <Route path="/sigma/transcode"></Route> */}
+              {/* <Route path="/sigma/library"></Route>\ */}
+              <Route path="/">
+                <div className="">
+                  Home
+                </div>
+              </Route>
+            </Switch>
           </div>
+
         </div>
       </Router>
     </>
