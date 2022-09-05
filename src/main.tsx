@@ -17,43 +17,16 @@ const appConfig: AppConfig = {
 }
 
 
+export const libraryHost = '//dev-livestream.gviet.vn/micro/cms/library/'
+
 export const microApps: MicroApp[] = [
-  // {
-  //   name: `@sigma-streaming/ssai`,
-  //   entry: isDev ? 'http://localhost:4100' : 'http://123.31.18.25:2181/micro/cms/ssai/',
-  //   activeRule: '#/sigma/ssai',
-  //   container: `#${CONTAINER_ID}`,
-  // },
-  // {
-  //   // name: `@sigma-streaming/lrm`,
-  //   name: 'vite',
-  //   url: hostVite,
-  // },
   {
     name: 'library',
-    url: '//localhost:4300/',
+    url: libraryHost,
   },
-  // {
-  //   name: `@sigma-streaming/library`,
-  //   entry: isDev ? 'http://localhost:4200' : 'https://dev-livestream.gviet.vn/micro/cms/library/',
-  //   activeRule: '#/sigma/library',
-  //   container: `#${CONTAINER_ID}`,
-  // },
-  // {
-  //   name: `@sigma-streaming/transcode`,
-  //   entry: isDev ? 'http://localhost:4200' : 'https://dev-livestream.gviet.vn/micro/cms/transcode-live/',
-  //   activeRule: '#/sigma/transcode',
-  //   container: `#${CONTAINER_ID}`,
-  // },
-  // {
-  //   name: `@sigma-streaming/interactive`,
-  //   entry: isDev ? 'http://127.0.0.1:5555/interactive/app/' : 'https://dev-livestream.gviet.vn/interactive/app/',
-  //   activeRule: '#/sigma/interactive',
-  // },
 ]
 
 export const actions = registerSigmaApps(microApps, appConfig);
-console.log('[LOG] ~ file: main.tsx ~ line 52 ~ actions', actions)
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,7 +3,7 @@ import NavBar from './NavBar';
 import { Button } from 'antd'
 import Sidebar from './Sidebar';
 import Vite from "./Vite";
-import { actions } from "./main";
+import { actions, libraryHost } from "./main";
 
 function Main() {
 
@@ -40,12 +40,12 @@ function Main() {
             </div> */}
             {/* <div style={{ height: 45 }}></div> */}
             <Switch>
-              <Route exact path="/library"> <Vite url="//localhost:4300/" name="library" /> </Route>
-              <Route exact path="/library-sub/:path"> <Vite url="//localhost:4300/" name="library" /> </Route>
-              {/* <Route exact path="/vite-sub/:path"> <Vite /> </Route> */}
-              {/* <Route path="/sigma/lrm"></Route> */}
-              {/* <Route path="/sigma/transcode"></Route> */}
-              {/* <Route path="/sigma/library"></Route>\ */}
+              <Route exact path="/library">
+                <Vite url={libraryHost} name="library" />
+              </Route>
+              <Route exact path="/library-sub/:path">
+                <Vite url={libraryHost} name="library" />
+              </Route>
               <Route path="/">
                 <div className="">
                   Home
