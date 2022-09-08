@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@antfu/utils': ^0.5.2
-  '@sigma-streaming/micro': ^1.0.4
+  '@sigma-streaming/micro': ^1.0.6
   '@types/react': ^17.0.47
   '@types/react-dom': ^17.0.17
   '@types/react-router-dom': ^5.3.3
@@ -18,11 +18,11 @@ specifiers:
   unocss: ^0.44.3
   vite: ^3.0.0
   vite-plugin-imp: ^2.0.4
-  wujie-react: 1.0.0-rc.13
+  wujie-react: 1.0.0-rc.14
 
 dependencies:
   '@antfu/utils': 0.5.2
-  '@sigma-streaming/micro': 1.0.4_react@17.0.2
+  '@sigma-streaming/micro': 1.0.6_react@17.0.2
   '@unocss/reset': 0.44.7
   antd: 4.22.8_sfoxds7t5ydpegc3knd667wn6m
   less: 4.1.3
@@ -30,7 +30,7 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-router: 5.3.3_react@17.0.2
   react-router-dom: 5.3.3_react@17.0.2
-  wujie-react: 1.0.0-rc.13_react@17.0.2
+  wujie-react: 1.0.0-rc.14_react@17.0.2
 
 devDependencies:
   '@types/react': 17.0.48
@@ -469,13 +469,13 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sigma-streaming/micro/1.0.4_react@17.0.2:
-    resolution: {integrity: sha512-9AHT5e9XN1iC2IXgATq2Ge/tATIpG0sHGcq+ecGh/V6c6/khVBfUGsWg5vIyHaZWBxK0Zm/GzZoe32whs172Fg==}
+  /@sigma-streaming/micro/1.0.6_react@17.0.2:
+    resolution: {integrity: sha512-GxiYFr/nX3ehb2RScdE+4RbNlIoOxm/cYGilBewDuf5A7bCMS2Svy6YK4hJLphMIWl36rSgxshVTQvnDbmUCPA==}
     dependencies:
       '@antfu/utils': 0.5.2
       defu: 6.1.0
-      wujie: 1.0.0-rc.13
-      wujie-react: 1.0.0-rc.13_react@17.0.2
+      wujie: 1.0.0-rc.14
+      wujie-react: 1.0.0-rc.14_react@17.0.2
     transitivePeerDependencies:
       - react
     dev: false
@@ -2594,18 +2594,18 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /wujie-react/1.0.0-rc.13_react@17.0.2:
-    resolution: {integrity: sha512-hdaUk4ZaYS4d/rcyB4uPo+I3n3fOA2/yK0QfujDR/MeXpUmDQVYxe3dG467Xwd1vfmJoh7I1onHxGcs7fYEhyw==}
+  /wujie-react/1.0.0-rc.14_react@17.0.2:
+    resolution: {integrity: sha512-ZZYmggN1oEft9jy8Ag0PWQEn2EP3AinuEbBgNjkA7w/Ml73TlOkMs+zNthK7gcW1m+aU/NIbfey30UUVttap9w==}
     peerDependencies:
       react: '>=16.0.0'
     dependencies:
       prop-types: 15.8.1
       react: 17.0.2
-      wujie: 1.0.0-rc.13
+      wujie: 1.0.0-rc.14
     dev: false
 
-  /wujie/1.0.0-rc.13:
-    resolution: {integrity: sha512-1DY2F8A4LP38izl8/UTWiQ7MIEtXEpGzEz8UllQM8jhi1Unef1OLv+wCAr5MbzXob+o/8Vx37pCRevXbW9+0vA==}
+  /wujie/1.0.0-rc.14:
+    resolution: {integrity: sha512-xI93DFWfbFkdvajVY7B9cmrENfH0mUXqNkg1BkhdOa7+2oGPJ61zx3aNkUIkMO80zQryCXzwUBiJF4b365loxQ==}
     dependencies:
       '@babel/runtime': 7.18.9
     dev: false

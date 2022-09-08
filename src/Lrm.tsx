@@ -7,11 +7,12 @@ export default function Vite({url = hostVite, name = 'vite'}) {
   const location = useLocation();
   // const navigation = useNavigate();
   const history = useHistory()
-  const path = location.pathname.replace(`/${name}-sub`, "").replace(`/${name}`, "").replace("/", "")
+  // channels/ec63ab7d-bda0-4058-9157-78dff20e5db9
 
-  console.log('[LOG] ~ file: Vite.tsx ~ line 11 ~ path', path)
+  const path = location.pathname.replace(`/${name}-sub`, "").replace(`/${name}`, "").replace("/", "")
+  console.log('[LOG] ~ file: Lrm.tsx ~ line 13 ~ path', path)
   const viteUrl = url + path;
-  console.log('[LOG] ~ file: Vite.tsx ~ line 13 ~ viteUrl', viteUrl)
+  console.log('[LOG] ~ file: Lrm.tsx ~ line 15 ~ viteUrl', viteUrl)
   const props = {
     jump: (newRoute) => {
       history.replace(`/${newRoute}`);

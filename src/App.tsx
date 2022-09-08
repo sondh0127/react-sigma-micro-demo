@@ -3,7 +3,8 @@ import NavBar from './NavBar';
 import { Button } from 'antd'
 import Sidebar from './Sidebar';
 import Vite from "./Vite";
-import { actions, libraryHost } from "./main";
+import { actions, libraryHost, lrmHost, transcodeHost } from "./main";
+import Lrm from "./Lrm";
 
 function Main() {
 
@@ -12,7 +13,7 @@ function Main() {
       token: 'newToken'
     })
   }
-
+  http://localhost:3003/#/channel/transcode/lrm/channels/ec63ab7d-bda0-4058-9157-78dff20e5db9
   return (
     <>
       <Router >
@@ -40,11 +41,24 @@ function Main() {
             </div> */}
             {/* <div style={{ height: 45 }}></div> */}
             <Switch>
-              <Route exact path="/library">
+              {/* <Route exact path="/library">
                 <Vite url={libraryHost} name="library" />
               </Route>
               <Route exact path="/library-sub/:path">
                 <Vite url={libraryHost} name="library" />
+              </Route>
+              <Route exact path="/channel/transcode/lrm/channels/:path">
+                <Lrm url={lrmHost} name="channel/transcode/lrm" />
+              </Route> */}
+              {/* <Route exact path="/lrm-sub/:path">
+                <Lrm url={lrmHost} name="lrm" />
+              </Route> */}
+
+              <Route exact path="/transcode-live">
+                <Vite url={transcodeHost} name="transcode-live" />
+              </Route>
+              <Route exact path="/transcode-live-sub/:path">
+                <Vite url={transcodeHost} name="transcode-live" />
               </Route>
               <Route path="/">
                 <div className="">
