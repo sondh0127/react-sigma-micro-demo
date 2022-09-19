@@ -40,7 +40,10 @@ const Sidebar = (props: SidebarProps) => {
 
   const memoItems = useMemo(() => {
     const items: MenuProps['items'] = (state?.children || []).map(item =>
-      getItem(item.name, item.name, <div className="i-ant-design:mail-filled" />,
+      getItem(item.name, item.name, <div onClick={() => {
+        console.log('[LOG] ~ file: Sidebar.tsx ~ line 44 ~ item', item)
+        history.push(item.name)
+      }} className="i-ant-design:mail-filled" />,
         item.routes.map(route => getItem(route.meta.title, route.path, <div className={route.meta.icon} />))
       ),
     )

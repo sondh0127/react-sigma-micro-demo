@@ -17,6 +17,8 @@ export default function Vite({url = hostVite, name = 'vite'}) {
     jump: (newRoute) => {
       history.replace(`/${newRoute}`);
     },
+    goBack: false,
+    importProgram: false
   }
 
   return (

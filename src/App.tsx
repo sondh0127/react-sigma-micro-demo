@@ -41,25 +41,25 @@ function Main() {
             </div> */}
             {/* <div style={{ height: 45 }}></div> */}
             <Switch>
-              {/* <Route exact path="/library">
+              <Route exact path="/library">
                 <Vite url={libraryHost} name="library" />
               </Route>
               <Route exact path="/library-sub/:path">
                 <Vite url={libraryHost} name="library" />
               </Route>
-              <Route exact path="/channel/transcode/lrm/channels/:path">
-                <Lrm url={lrmHost} name="channel/transcode/lrm" />
-              </Route> */}
-              {/* <Route exact path="/lrm-sub/:path">
+              <Route exact path="/lrm">
                 <Lrm url={lrmHost} name="lrm" />
-              </Route> */}
-
+              </Route>
+              <Route exact path="/lrm-sub/:path">
+                <Lrm url={lrmHost} name="lrm" />
+              </Route>
+{/*
               <Route exact path="/transcode-live">
                 <Vite url={transcodeHost} name="transcode-live" />
               </Route>
               <Route exact path="/transcode-live-sub/:path">
                 <Vite url={transcodeHost} name="transcode-live" />
-              </Route>
+              </Route> */}
               <Route path="/">
                 <div className="">
                   Home
