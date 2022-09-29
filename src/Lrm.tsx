@@ -26,7 +26,7 @@ export default function Vite({url = hostVite, name = 'vite'}) {
     // changing the URL sub -application re -rendering instance to the corresponding routing
     <WujieReact
       width="100%"
-      height="100%"
+      height="50%"
       name={name}
       url={viteUrl}
       sync={!path}

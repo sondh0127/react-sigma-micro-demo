@@ -14,11 +14,11 @@ const appConfig: AppConfig = {
 }
 
 // export const libraryHost = '//localhost:4300/'
-export const lrmHost = '//localhost:4200/'
+// export const lrmHost = '//localhost:4200/'
 // export const transcodeHost = '//localhost:4200/'
 
 export const libraryHost = '//dev-livestream.gviet.vn/micro/cms/library/'
-// export const lrmHost = '//dev-livestream.gviet.vn/micro/cms/lrm/'
+export const lrmHost = '//dev-livestream.gviet.vn/micro/cms/lrm/'
 // export const transcodeHost = '//dev-livestream.gviet.vn/micro/cms/transcode-live/'
 
 export const microApps: MicroApp[] = [
